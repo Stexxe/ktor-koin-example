@@ -1,12 +1,14 @@
-# Resource routing
+# Ktor with Koin
 
-An example that demonstrates how to implement [type-safe routing](https://ktor.io/docs/type-safe-routing.html) using the `Resources` plugin.
-> This sample is a part of the [codeSnippets](../../README.md) Gradle project.
+An example that demonstrates a failing Ktor with Koin that produces the error:
+> org.koin.core.error.KoinAppAlreadyStartedException: A Koin Application has already been started
 
 ## Running
 
-To run a sample, execute the following command in a repository's root directory:
+To run the sample, execute the following command in a repository's root directory:
 
 ```bash
-./gradlew :resource-routing:run
+./gradlew clean test
 ```
+
+Everything that I want to achieve can be found inside `BaseApplicationTest` and `ApplicationTest`.
