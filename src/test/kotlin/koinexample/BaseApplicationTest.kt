@@ -32,6 +32,13 @@ internal abstract class BaseApplicationTest : KoinTest {
     }
 
     fun <R> withApp(applicationTestBuilder: suspend ApplicationTestBuilder.() -> R) = testApplication {
+        application {
+            module(testing = true)
+        }
+        environment {
+            config = MapApplicationConfig()
+        }
+
         loadKoinModules(testModule)
 
         if (!isMigrated) {

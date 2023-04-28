@@ -8,8 +8,8 @@ import koinexample.routes.userRoutes
 
 fun main(args: Array<String>): Unit = io.ktor.server.cio.EngineMain.main(args)
 
-fun Application.module() {
-    configureServiceContainer()
+fun Application.module(testing: Boolean = false) {
+    if (!testing) configureServiceContainer()
     configureResources()
 
     routing {
